@@ -1,0 +1,31 @@
+managed implementation in class zbp_i_header_jpm unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for Z_I_HEADER_JPM //alias <alias_name>
+persistent table zheader_jpmv
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly:update) id;
+  association _Items { create; }
+
+  mapping for zheader_jpmv corresponding;
+}
+
+define behavior for Z_I_ITEMS_JPM //alias <alias_name>
+persistent table zitems_jpmv
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly:update ) id, id_header;
+  association _Header;
+
+  mapping for zitems_jpmv corresponding;
+}

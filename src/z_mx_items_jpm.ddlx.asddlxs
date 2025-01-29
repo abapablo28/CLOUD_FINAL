@@ -1,0 +1,72 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'ITEMS',
+        typeNamePlural: 'ITEMS',
+        title: { type: #STANDARD,
+        label: 'ITEMS',
+        value: 'id' }
+        }
+        }
+
+
+annotate entity Z_C_ITEMS_JPM with
+{
+  @UI.facet: [{ id: 'ITEMS',
+            purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+            label: 'ITEMS'
+           }]
+
+  @UI : { lineItem : [ { position : 10, label : 'Id', importance : #MEDIUM } ],
+        identification : [ { position : 10, label : 'Id' } ] }
+
+  id;
+
+  @UI : { lineItem : [ { position : 20, label : 'Name', importance : #MEDIUM } ],
+             identification : [ { position : 20, label : 'Name' } ] }
+
+  name;
+
+  @UI : { lineItem : [ { position : 30, label : 'Descr', importance : #MEDIUM } ],
+             identification : [ { position : 30, label : 'Descr' } ] }
+  descr;
+
+  @UI : { lineItem : [ { position : 40, label : 'Relea', importance : #MEDIUM } ],
+             identification : [ { position : 40, label : 'Relea' } ] }
+  relea;
+
+  @UI : { lineItem : [ { position : 50, label : 'Disco', importance : #MEDIUM } ],
+             identification : [ { position : 50, label : 'Disco' } ] }
+  disco;
+
+  @UI : { lineItem : [ { position : 60, label : 'Price', importance : #MEDIUM } ],
+             identification : [ { position : 60, label : 'Price' } ] }
+  price;
+
+  @UI : { lineItem : [ { position : 70, label : 'Heih', importance : #MEDIUM } ],
+             identification : [ { position : 70, label : 'Heih' } ] }
+  heih;
+
+  @UI : { lineItem : [ { position : 80, label : 'Width', importance : #MEDIUM } ],
+             identification : [ { position : 80, label : 'Width' } ] }
+  width;
+
+  @UI : { lineItem : [ { position : 90, label : 'Depth', importance : #MEDIUM } ],
+             identification : [ { position : 90, label : 'Depth' } ] }
+  depth;
+
+  @UI : { lineItem : [ { position : 100, label : 'Quant', importance : #MEDIUM } ],
+             identification : [ { position : 100, label : 'Quant' } ] }
+  quant;
+
+  @UI : { lineItem : [ { position : 110, label : 'Unito', importance : #MEDIUM } ],
+             identification : [ { position : 110, label : 'Unito' } ] }
+  unito;
+
+
+
+
+
+
+}

@@ -1,0 +1,140 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'HEADER',
+                     typeNamePlural: 'HEADER',
+                     imageUrl: 'imaur',
+                     title: { type: #STANDARD,
+                              label: 'HEADER',
+                              value: 'id',
+                             iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRHTefHN7cY92ux9hCgdRR4rlIWMVPQdaIw&s'
+
+                            }
+                   }
+     }
+@Search.searchable: true
+
+annotate entity Z_C_HEADER_JPM with
+{
+
+
+
+    
+
+  @UI.facet: [{ id:            'Header',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'header',
+                 position:      10 }]
+
+
+@UI.selectionField: [{ position: 10 }]
+@Search.defaultSearchElement: true
+@Search.fuzzinessThreshold: 0.8
+
+  @UI : { lineItem : [ { position : 1, label : 'Id', importance : #MEDIUM } ],
+          identification : [ { position : 1, label : 'Id' } ] }
+  id;
+  
+  
+    
+//  ,
+//
+//  @UI.criticality: {
+//      #SUCCESS => 'Verde',
+//      #WARNING => 'Amarillo',
+//      #ERROR => 'Rojo'
+//  }
+//  case 
+//      when StockLevel > 50 then #SUCCESS  // Verde
+//      when StockLevel between 10 and 50 then #WARNING  // Amarillo
+//      else #ERROR  // Rojo
+//  end as Criticality
+//  
+  
+  
+  
+  
+  
+
+  @UI: { lineItem: [{ position: 20, label: 'Email', importance: #MEDIUM }],
+         identification : [ { position : 20, label : 'Email' } ] }
+        @Consumption.valueHelpDefinition: [{ entity: {element: 'Email',  name: 'z_i_header_jpm' } }]
+         
+         
+         
+         
+         
+         
+  email;
+
+  @UI: { lineItem: [{ position: 30, label: 'Fname', importance: #MEDIUM}],
+  identification : [ { position : 30, label : 'Fname' } ],
+  selectionField: [ { position: 40 } ] 
+  
+    }
+  @Consumption.valueHelpDefinition: [{ entity: {element: 'fname',  name: 'z_i_header_jpm' } }]
+  
+  fname;
+
+  @UI: { lineItem: [{ position: 40, label: 'Lname', importance: #MEDIUM }],
+  identification : [ { position : 40, label : 'Lname' } ],
+  selectionField: [ { position: 40 } ] 
+  
+      }
+      
+  lname;
+
+  @UI: { lineItem: [{ position: 50, label: 'Cotry', importance: #MEDIUM }],
+  identification : [ { position : 50, label : 'Cotry' } ] }
+  cotry;
+
+
+  @UI: { lineItem: [{ position: 60, label: 'Creat', importance: #MEDIUM }],
+  identification : [ { position : 60, label : 'Creat' } ] }
+  creat;
+
+  @UI: { lineItem: [{ position: 70, label: 'Deliv', importance: #MEDIUM }],
+  identification : [ { position : 70, label : 'Deliv' } ] }
+  deliv;
+
+  @UI: { lineItem: [{ position: 80, label: 'Ordes', importance: #MEDIUM }],
+  identification : [ { position : 80, label : 'Ordes' } ] }
+  ordes;
+
+  @UI: { lineItem: [{ position: 90,iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRHTefHN7cY92ux9hCgdRR4rlIWMVPQdaIw&s', label: 'Imaur', importance: #MEDIUM }],
+  identification : [ { position : 90, label : 'Imaur' } ]
+  
+   }
+  
+   //iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRHTefHN7cY92ux9hCgdRR4rlIWMVPQdaIw&s'
+  
+  imaur;
+  
+  
+  
+
+//////  @UI: {
+//////         lineItem: [
+//////         { position: 10, label: 'order id', importance: #HIGH },
+//////         { position: 10, label: 'Name', importance: #HIGH },
+//////         { position: 10, label: 'description', importance: #HIGH}
+//////         ]
+//////         }
+
+@UI.facet: [{ id:            'items',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'ITEMS',
+                 position:      20,
+                 targetElement: '_Items' }]
+       @UI: {
+        lineItem: [
+        { position: 10, label: 'order id', importance: #HIGH },
+        { position: 10, label: 'Name', importance: #HIGH },
+        { position: 10, label: 'description', importance: #HIGH}
+         ]
+         }
+
+  _Items;
+
+
+}
